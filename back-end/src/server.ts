@@ -1,4 +1,5 @@
 import express, { Application } from "express";
+import enrutadorIndex from "./routes/index.routes";
 
 export class Server {
 
@@ -10,9 +11,12 @@ export class Server {
       this.app = express();
       //se ejecuta el metodo de configuracion//
       this.configuracion();
-      //se ejecuta el metodo listen//
-      this.listen();
-    }
+      //se ejecuta el metodo routes//
+      this.routes();
+      
+      this.middleware();
+
+     }
 
     configuracion()
     {
@@ -20,13 +24,22 @@ export class Server {
         this.app.set('port', process.env.port || 3000)
     }
 
-    
+    routes(){
+      this.app.use(enrutadorIndex);
+    }
 
-     //le da arranque al servidor//
+    //configuraciones extras//
+    middleware()
+    {
+      this.app.use(express.json());
+    }
+
+    //le da arranque al servidor//
     listen()
     {
          this.app.listen(this.app.get('port'));
          console.log('Servidor corriendo en el puerto 3000');
     }
+    
 
 }
