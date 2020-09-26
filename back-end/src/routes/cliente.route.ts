@@ -8,6 +8,6 @@ let clienteController = new ClienteController();
 const enrutadorCliente = Router();
 
 //creamos la ruta con metodo un get, es decir, obtener datos 
-enrutadorCliente.route('/cliente').get(clienteController,listaCliente);
+enrutadorCliente.route('/cliente').get(ClienteController);
 //creamos la ruta con metodo un post para guardar datos en la BD
 enrutadorCliente.route('/cliente').post();
