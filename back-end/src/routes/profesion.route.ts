@@ -11,4 +11,4 @@ let profesionController = new ProfesionController();
 
 //creacion de las rutas
 
-enrutadorProfesion('/profesion').get(profesionController,listaProfesion);
+enrutadorProfesion.route('/profesion').get(profesionController.listaProfesion);
