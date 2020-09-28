@@ -45,7 +45,7 @@ class Gramajecontrollers {
             //Recibe el codigo
             let codigo = req.params.codigo;
             //Realiza la eliminacion del gramaje
-            yield db.query('delete from consola where id_gramaje = ?', [codigo]);
+            yield db.query('delete from gramaje where id_gramaje = ?', [codigo]);
             //Retorna un mensaje despues de realizarse todo de forma correcta
             return res.json('el gramaje fue eliminado corecctamente');
         });
@@ -60,12 +60,12 @@ class Gramajecontrollers {
             //Nuevo datos del gramaje
             let gramaje_actualizado = req.body;
             //Realiza la actualizacion
-            yield db.query('uptade consola set ? where id_gramaje = ?', [gramaje_actualizado, codigo]);
+            yield db.query('update gramaje set ? where id_gramaje = ?', [gramaje_actualizado, codigo]);
             //Retorno un mensaje despues de realizarse todo correctamente
             return res.json('se actualizo correctamente');
         });
     }
-    //Motodo que lista una consola en especifico
+    //Motodo que lista una gramaje en especifico
     obtenerUngramaje(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             //Conexion con la base de datos

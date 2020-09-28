@@ -54,7 +54,7 @@ import { igramaje } from '../models/gramaje';
         let codigo = req.params.codigo;
 
         //Realiza la eliminacion del gramaje
-        await db.query('delete from consola where id_gramaje = ?',[codigo]);
+        await db.query('delete from gramaje where id_gramaje = ?',[codigo]);
 
         //Retorna un mensaje despues de realizarse todo de forma correcta
         return res.json('el gramaje fue eliminado corecctamente');
@@ -74,13 +74,13 @@ import { igramaje } from '../models/gramaje';
         let gramaje_actualizado = req.body;
 
         //Realiza la actualizacion
-        await db.query('uptade consola set ? where id_gramaje = ?',[gramaje_actualizado,codigo]);
+        await db.query('update gramaje set ? where id_gramaje = ?',[gramaje_actualizado,codigo]);
 
         //Retorno un mensaje despues de realizarse todo correctamente
         return res.json ('se actualizo correctamente');
 
     }
-     //Motodo que lista una consola en especifico
+     //Motodo que lista una gramaje en especifico
     public async obtenerUngramaje (req:Request , res:Response){
 
         //Conexion con la base de datos
