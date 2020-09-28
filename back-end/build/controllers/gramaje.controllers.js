@@ -19,7 +19,7 @@ class Gramajecontrollers {
             //Guardamos la funcion "conexion" en las constante "db" para lograr la conexion con la base de datos
             const db = yield database_1.conexion();
             //Realizamos la consulta para mostrar los datos de la tabla gramaje
-            let gramaje = yield db.query('select* from gramje');
+            let gramaje = yield db.query('select * from gramaje');
             //Retorna una respuesta en formato json de gramaje
             return res.json(gramaje);
         });
@@ -32,7 +32,7 @@ class Gramajecontrollers {
             //Guardamos los datos ingresados en el body en una variable
             let gramaje = req.body;
             //Inserta los datos en la base de datos
-            yield db.query('insert into gramje set ?', [gramaje]);
+            yield db.query('insert into gramaje set ?', [gramaje]);
             //Retorna un mensaje despues de realizarse todo de forma correcta
             return res.json('el gramaje fue guardado corecctamente');
         });

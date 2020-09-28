@@ -17,7 +17,7 @@ import { igramaje } from '../models/gramaje';
         const db = await conexion();
 
        //Realizamos la consulta para mostrar los datos de la tabla gramaje
-        let gramaje = await db.query('select* from gramje');
+        let gramaje = await db.query('select * from gramaje');
 
         //Retorna una respuesta en formato json de gramaje
         return res.json(gramaje);
@@ -37,7 +37,7 @@ import { igramaje } from '../models/gramaje';
 
 
         //Inserta los datos en la base de datos
-        await db.query('insert into gramje set ?',[gramaje]);
+        await db.query('insert into gramaje set ?',[gramaje]);
 
         //Retorna un mensaje despues de realizarse todo de forma correcta
         return res.json('el gramaje fue guardado corecctamente');

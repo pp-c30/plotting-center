@@ -1,6 +1,7 @@
 import express, { Application } from "express";
 import enrutadorIndex from "./routes/index.routes";
 import enrutadorGramaje from "./routes/gramaje.routes";
+import morgan from "morgan";
 
 export class Server {
 
@@ -12,10 +13,12 @@ export class Server {
       this.app = express();
       //se ejecuta el metodo de configuracion//
       this.configuracion();
+
+      this.middleware();
       //se ejecuta el metodo routes//
       this.routes();
       
-      this.middleware();
+     
 
      }
 
@@ -33,7 +36,9 @@ export class Server {
     //configuraciones extras//
     middleware()
     {
+      this.app.use(morgan('dev'));
       this.app.use(express.json());
+     
     }
 
     //le da arranque al servidor//

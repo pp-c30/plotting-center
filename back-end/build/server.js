@@ -6,15 +6,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const index_routes_1 = __importDefault(require("./routes/index.routes"));
 const gramaje_routes_1 = __importDefault(require("./routes/gramaje.routes"));
+const morgan_1 = __importDefault(require("morgan"));
 class Server {
     constructor() {
         //hace uso de express//
         this.app = express_1.default();
         //se ejecuta el metodo de configuracion//
         this.configuracion();
+        this.middleware();
         //se ejecuta el metodo routes//
         this.routes();
-        this.middleware();
     }
     configuracion() {
         //se seteo el puerto//
@@ -26,6 +27,7 @@ class Server {
     }
     //configuraciones extras//
     middleware() {
+        this.app.use(morgan_1.default('dev'));
         this.app.use(express_1.default.json());
     }
     //le da arranque al servidor//
