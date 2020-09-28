@@ -1,5 +1,6 @@
 import express, { Application } from "express";
 import enrutadorIndex from "./routes/index.routes";
+import enrutadorGramaje from "./routes/gramaje.routes";
 
 export class Server {
 
@@ -26,6 +27,7 @@ export class Server {
 
     routes(){
       this.app.use(enrutadorIndex);
+      this.app.use(enrutadorGramaje);
     }
 
     //configuraciones extras//
