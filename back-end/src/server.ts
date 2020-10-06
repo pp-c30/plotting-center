@@ -2,6 +2,7 @@ import express, { Application } from "express";
 import enrutadorIndex from "./routes/index.routes";
 import enrutadorGramaje from "./routes/gramaje.routes";
 import enrutadorProfesion from "./routes/profesion.routes";
+import enrutadorImpresion from "./routes/impresion.routes";
 import morgan from "morgan";
 
 export class Server {
@@ -33,6 +34,7 @@ export class Server {
       this.app.use(enrutadorIndex);
       this.app.use(enrutadorGramaje);
       this.app.use(enrutadorProfesion);
+      this.app.use(enrutadorImpresion);
     }
 
     //configuraciones extras//
