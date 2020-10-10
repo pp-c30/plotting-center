@@ -96,5 +96,4 @@ import { igramaje } from '../models/gramaje';
         return res.json(ungramaje[0]);
     }
 
-
 }
