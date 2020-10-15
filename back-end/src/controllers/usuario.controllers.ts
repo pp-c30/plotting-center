@@ -4,7 +4,7 @@ import { conexion } from '../database';
 //Importamos las interfaz "Request" y "Repose" desde "express
 import { Request, Response } from "express";
 
-//Importamos la interfaz "iimpresion" desde el archivo "impresion"
+//Importamos la interfaz "iusuario" desde el archivo "usuario"
 import { iusuario } from '../models/usuario';
 
 //Clase que nos permite alamacenar metodos
@@ -16,10 +16,10 @@ import { iusuario } from '../models/usuario';
         //Guardamos la funcion "conexion" en las constante "db" para lograr la conexion con la base de datos
           const db = await conexion();
   
-         //Realizamos la consulta para mostrar los datos de la tabla impresion
+         //Realizamos la consulta para mostrar los datos de la tabla usuario
           let usuario = await db.query('select * from usuario');
   
-          //Retorna una respuesta en formato json de la impresion
+          //Retorna una respuesta en formato json del usuario
           return res.json(usuario);
   
       }
@@ -50,11 +50,11 @@ import { iusuario } from '../models/usuario';
        //Recibe el codigo
        let codigo = req.params.codigo;
 
-       //Realiza la eliminacion de la impresion
+       //Realiza la eliminacion del usuario
        await db.query('delete from usuario where id_usuario = ?',[codigo]);
 
        //Retorna un mensaje despues de realizarse todo de forma correcta
-       return res.json('El usuario fue eliminado corecctamente');
+       return res.json('El usuario fue eliminado correctamente');
 
 
    }
@@ -67,7 +67,7 @@ import { iusuario } from '../models/usuario';
        //Recibe el codigo
        let codigo = req.params.codigo;
 
-        //Nuevo datos de la impresion
+        //Nuevo datos del usuario
        let usuario_actualizada = req.body;
 
        //Realiza la actualizacion

@@ -1,16 +1,16 @@
 //Importamos la funcion "Router" desde "express"
 import { Router } from "express";
 
-//Importamos el metodo "gramaje Controllers" desde el archivo "gramaje.controllers"
+//Importamos el metodo "usuario Controllers" desde el archivo "usuario.controllers"
 import { Usuariocontrollers } from '../controllers/usuario.controllers';
 
-//Instancia que permite tener todas las funciones de la clase " gramaje Controllers"
+//Instancia que permite tener todas las funciones de la clase " usuario Controllers"
 let usuariocontrollers = new Usuariocontrollers();
 
-//Creamos una variable constante llamada "enrutador gramaje" en la que se guardan todas las funciones de Router
+//Creamos una variable constante llamada "enrutador usuario" en la que se guardan todas las funciones de Router
 const enrutadorusuario = Router();
 
-//Creamos una ruta que realiza una peticion que listara el gramaje
+//Creamos una ruta que realiza una peticion que listara el usuario
 enrutadorusuario.route('/usuario').get(usuariocontrollers.listarusuario);
 
 //Ruta que permite guardar los datos en la base
