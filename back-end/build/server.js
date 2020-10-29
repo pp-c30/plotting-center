@@ -3,9 +3,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Server = void 0;
 const express_1 = __importDefault(require("express"));
 const index_routes_1 = __importDefault(require("./routes/index.routes"));
 const gramaje_routes_1 = __importDefault(require("./routes/gramaje.routes"));
+const profesion_routes_1 = __importDefault(require("./routes/profesion.routes"));
+const impresion_routes_1 = __importDefault(require("./routes/impresion.routes"));
+const cliente_routes_1 = __importDefault(require("./routes/cliente.routes"));
 const morgan_1 = __importDefault(require("morgan"));
 class Server {
     constructor() {
@@ -24,6 +28,9 @@ class Server {
     routes() {
         this.app.use(index_routes_1.default);
         this.app.use(gramaje_routes_1.default);
+        this.app.use(profesion_routes_1.default);
+        this.app.use(impresion_routes_1.default);
+        this.app.use(cliente_routes_1.default);
     }
     //configuraciones extras//
     middleware() {
