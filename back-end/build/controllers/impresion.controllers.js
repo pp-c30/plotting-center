@@ -9,75 +9,75 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Gramajecontrollers = void 0;
+exports.Impresioncontrollers = void 0;
 //Importamos la funcion "conexion" desde el archivo database
 const database_1 = require("../database");
 //Clase que nos permite alamacenar metodos
-class Gramajecontrollers {
+class Impresioncontrollers {
     //Metodo que nos permite listar consola
-    listargramaje(req, res) {
+    listarimpresion(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             //Guardamos la funcion "conexion" en las constante "db" para lograr la conexion con la base de datos
             const db = yield database_1.conexion();
-            //Realizamos la consulta para mostrar los datos de la tabla gramaje
-            let gramaje = yield db.query('select * from gramaje');
-            //Retorna una respuesta en formato json de gramaje
-            return res.json(gramaje);
+            //Realizamos la consulta para mostrar los datos de la tabla impresion
+            let impresion = yield db.query('select * from impresion');
+            //Retorna una respuesta en formato json de la impresion
+            return res.json(impresion);
         });
     }
     //Metodo que guarda datos en la clase
-    guardargramaje(req, res) {
+    guardarimpresion(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             //Conexion con la base de datos
             const db = yield database_1.conexion();
             //Guardamos los datos ingresados en el body en una variable
-            let gramaje = req.body;
+            let impresion = req.body;
             //Inserta los datos en la base de datos
-            yield db.query('insert into gramaje set ?', [gramaje]);
+            yield db.query('insert into gramaje set ?', [impresion]);
             //Retorna un mensaje despues de realizarse todo de forma correcta
-            return res.json('el gramaje fue guardado corecctamente');
+            return res.json('La impresion fue guardada corecctamente');
         });
     }
     //Metodo que nos permite eliminar datos 
-    eliminargramaje(req, res) {
+    eliminarimpresion(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             //Conexion con la base de datos
             const db = yield database_1.conexion();
             //Recibe el codigo
             let codigo = req.params.codigo;
-            //Realiza la eliminacion del gramaje
-            yield db.query('delete from gramaje where id_gramaje = ?', [codigo]);
+            //Realiza la eliminacion de la impresion
+            yield db.query('delete from impresion where id_impresion = ?', [codigo]);
             //Retorna un mensaje despues de realizarse todo de forma correcta
-            return res.json('el gramaje fue eliminado corecctamente');
+            return res.json('La impresion fue eliminada corecctamente');
         });
     }
     //Metodo que nos permite actualizar datos
-    actualizargramaje(req, res) {
+    actualizarimpresion(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             //Conexion con la base de datos
             const db = yield database_1.conexion();
             //Recibe el codigo
             let codigo = req.params.codigo;
-            //Nuevo datos del gramaje
-            let gramaje_actualizado = req.body;
+            //Nuevo datos de la impresion
+            let impresion_actualizada = req.body;
             //Realiza la actualizacion
-            yield db.query('update gramaje set ? where id_gramaje = ?', [gramaje_actualizado, codigo]);
+            yield db.query('update impresion set ? where id_impresion = ?', [impresion_actualizada, codigo]);
             //Retorno un mensaje despues de realizarse todo correctamente
-            return res.json('se actualizo correctamente');
+            return res.json('Se actualizo correctamente la impresion');
         });
     }
-    //Motodo que lista una gramaje en especifico
-    obtenerUngramaje(req, res) {
+    //Motodo que lista una impresion en especifico
+    obtenerUnaimpresion(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             //Conexion con la base de datos
             const db = yield database_1.conexion();
             //Recibimos el codigo de la consola
             let codigo = req.params.codigo;
             //Realiza la seleccion de una consola y la guarda en una variable
-            let ungramaje = yield db.query('select * from gramaje where id_gramaje = ?', [codigo]);
+            let unaimpresion = yield db.query('select * from impresion where id_impresion = ?', [codigo]);
             //Retorna la consola selecciona
-            return res.json(ungramaje[0]);
+            return res.json(unaimpresion[0]);
         });
     }
 }
-exports.Gramajecontrollers = Gramajecontrollers;
+exports.Impresioncontrollers = Impresioncontrollers;

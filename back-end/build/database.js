@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.conexion = void 0;
 const promise_mysql_1 = require("promise-mysql");
 //cramos la funcion conexion encargada de conectarse y luego la exportamos
 function conexion() {

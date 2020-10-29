@@ -9,75 +9,75 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Gramajecontrollers = void 0;
+exports.Usuariocontrollers = void 0;
 //Importamos la funcion "conexion" desde el archivo database
 const database_1 = require("../database");
 //Clase que nos permite alamacenar metodos
-class Gramajecontrollers {
+class Usuariocontrollers {
     //Metodo que nos permite listar consola
-    listargramaje(req, res) {
+    listarusuario(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             //Guardamos la funcion "conexion" en las constante "db" para lograr la conexion con la base de datos
             const db = yield database_1.conexion();
-            //Realizamos la consulta para mostrar los datos de la tabla gramaje
-            let gramaje = yield db.query('select * from gramaje');
-            //Retorna una respuesta en formato json de gramaje
-            return res.json(gramaje);
+            //Realizamos la consulta para mostrar los datos de la tabla usuario
+            let usuario = yield db.query('select * from usuario');
+            //Retorna una respuesta en formato json del usuario
+            return res.json(usuario);
         });
     }
     //Metodo que guarda datos en la clase
-    guardargramaje(req, res) {
+    guardarusuario(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             //Conexion con la base de datos
             const db = yield database_1.conexion();
             //Guardamos los datos ingresados en el body en una variable
-            let gramaje = req.body;
+            let usuario = req.body;
             //Inserta los datos en la base de datos
-            yield db.query('insert into gramaje set ?', [gramaje]);
+            yield db.query('insert into usuario set ?', [usuario]);
             //Retorna un mensaje despues de realizarse todo de forma correcta
-            return res.json('el gramaje fue guardado corecctamente');
+            return res.json('El usuario fue guardado correctamente');
         });
     }
     //Metodo que nos permite eliminar datos 
-    eliminargramaje(req, res) {
+    eliminarusuario(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             //Conexion con la base de datos
             const db = yield database_1.conexion();
             //Recibe el codigo
             let codigo = req.params.codigo;
-            //Realiza la eliminacion del gramaje
-            yield db.query('delete from gramaje where id_gramaje = ?', [codigo]);
+            //Realiza la eliminacion del usuario
+            yield db.query('delete from usuario where id_usuario = ?', [codigo]);
             //Retorna un mensaje despues de realizarse todo de forma correcta
-            return res.json('el gramaje fue eliminado corecctamente');
+            return res.json('El usuario fue eliminado correctamente');
         });
     }
     //Metodo que nos permite actualizar datos
-    actualizargramaje(req, res) {
+    actualizarusuario(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             //Conexion con la base de datos
             const db = yield database_1.conexion();
             //Recibe el codigo
             let codigo = req.params.codigo;
-            //Nuevo datos del gramaje
-            let gramaje_actualizado = req.body;
+            //Nuevo datos del usuario
+            let usuario_actualizada = req.body;
             //Realiza la actualizacion
-            yield db.query('update gramaje set ? where id_gramaje = ?', [gramaje_actualizado, codigo]);
+            yield db.query('update usuario set ? where id_usuario = ?', [usuario_actualizada, codigo]);
             //Retorno un mensaje despues de realizarse todo correctamente
-            return res.json('se actualizo correctamente');
+            return res.json('Se actualizo correctamente el usuario');
         });
     }
-    //Motodo que lista una gramaje en especifico
-    obtenerUngramaje(req, res) {
+    //Motodo que lista una impresion en especifico
+    obtenerUnusuario(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             //Conexion con la base de datos
             const db = yield database_1.conexion();
             //Recibimos el codigo de la consola
             let codigo = req.params.codigo;
             //Realiza la seleccion de una consola y la guarda en una variable
-            let ungramaje = yield db.query('select * from gramaje where id_gramaje = ?', [codigo]);
+            let unusuario = yield db.query('select * from usuario where id_usuario = ?', [codigo]);
             //Retorna la consola selecciona
-            return res.json(ungramaje[0]);
+            return res.json(unusuario[0]);
         });
     }
 }
-exports.Gramajecontrollers = Gramajecontrollers;
+exports.Usuariocontrollers = Usuariocontrollers;
