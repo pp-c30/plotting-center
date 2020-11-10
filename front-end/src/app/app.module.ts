@@ -7,6 +7,7 @@ import { ProfesionComponent } from './componentes/profesion/profesion.component'
 import { ClienteComponent } from './componentes/cliente/cliente.component';
 import { UsuarioComponent } from './componentes/usuario/usuario.component';
 import { ImpresionComponent } from './componentes/impresion/impresion.component';
+import { RolloComponent } from './componentes/rollo/rollo.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ImpresionComponent } from './componentes/impresion/impresion.component'
     ProfesionComponent,
     ClienteComponent,
     UsuarioComponent,
-    ImpresionComponent],
+    ImpresionComponent,
+    RolloComponent],
 
   imports: [
     BrowserModule,
