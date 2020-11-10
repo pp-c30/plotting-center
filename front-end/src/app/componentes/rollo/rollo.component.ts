@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RolloService } from "../../services/rollo.service";
 
 @Component({
   selector: 'app-rollo',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RolloComponent implements OnInit {
 
-  constructor() { }
+  listRollo = [];
+
+  constructor(private rolloServ:RolloService) {
+
+   }
 
   ngOnInit(): void {
+    this.listarRollo
   }
 
+
+  listarRollo()
+  {
+  this.rolloServ.getRollo().subscribe(
+     resultado => this.listRollo = resultado,
+     error => console.log(error)
+  )
+  }
 }
+
