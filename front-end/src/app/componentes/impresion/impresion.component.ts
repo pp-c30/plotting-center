@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ImpresionService } from "../../services/impresion.service";
 
 @Component({
   selector: 'app-impresion',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImpresionComponent implements OnInit {
 
-  constructor() { }
+  listaImpresion = [];
+
+  constructor(private ImpresionServi:ImpresionService) { }
 
   ngOnInit(): void {
+    this.obtenerImpresiones();
+  }
+
+  obtenerImpresiones()
+  {
+    this.ImpresionServi.getImpresion().subscribe(
+      resultado => this.listaImpresion = resultado,
+      error => console.log(error)
+    )
   }
 
 }
