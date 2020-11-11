@@ -1,3 +1,4 @@
+<!--
 
 <br>
 <br>
@@ -43,3 +44,56 @@
       </tr>
     </thead>
     </table>
+<tbody>
+  <tr *ngFor="let rollo of listRollo">
+    <td>{{rollo.id}}</td>
+    <td>{{rollo.ancho}}</td>
+    <td>{{rollo.largo}}</td>
+    <td>{{rollo.nombre}}</td>
+  </tr>
+</tbody>
+-->
+<div class="row">
+  <div class="col-sm-6">
+      <table class=" table table-striped">
+        <thead>
+          <tr>
+            <th>Cliente</th>
+            <th>Ancho</th>
+            <th>Largo</th>
+            <th>nombre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            
+          </tr>
+        </tbody>
+      </table>
+  </div>
+  <div class="col-sm-4">
+    <h1 align="center">Rollo</h1>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="inputGroupSelect01">Ancho</label>
+      </div>
+      <input type="number" aria-label="Last name" class="form-control">
+    </div>
+    <div class="input-group">
+      <input type="number" aria-label="Last name" class="form-control">
+      <div class="input-group-append">
+        <label class="input-group-text" for="inputGroupSelect01">Largo</label>
+      </div>
+    </div>
+    Nombre
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <input type="radio" aria-label="Radio button for following text input">
+        </div>
+      </div>
+      <input type="text" class="form-control" aria-label="Text input with radio button">
+    </div>
+    <br>
+    <button class="btn btn-success">Aceptar</button>
+</div>
