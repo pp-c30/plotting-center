@@ -42,6 +42,21 @@
               </tr>
           </thead>
           <tbody>
+              <tr *ngFor="let impresion of listaImpresion">
+                  <td>{{impresion.tipo_color}}</td>
+                  <td>{{impresion.tamanio_area}}</td>
+                  <td>{{impresion.ancho}}</td>
+                  <td>{{impresion.largo}}</td> 
+                  <td>{{impresion.gramaje}}</td>
+                  <td>{{impresion.rollo}}</td>
+                  <td>{{impresion.cantidad}}</td>
+                  <td>{{impresion.correcciones}}</td>
+                  <td>{{impresion.tiempo_co}}</td>
+                  <td>{{impresion.precio_x_hora}}</td> 
+                  <td>{{impresion.precio_total}}</td>
+                  <td>{{impresion.cliente}}</td>
+                  
+              </tr>
 
           </tbody>
       </table>
