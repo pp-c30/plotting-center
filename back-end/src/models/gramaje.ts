@@ -5,5 +5,5 @@ export interface igramaje
 {
     id_gramaje?:number;
      gramaje: string;
-
+    
 }

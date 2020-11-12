@@ -15,7 +15,7 @@ export class RolloComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.listarRollo
+    this.listarRollo();
   }
 
 
