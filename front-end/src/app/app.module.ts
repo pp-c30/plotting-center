@@ -10,6 +10,7 @@ import { ImpresionComponent } from './componentes/impresion/impresion.component'
 import { RolloComponent } from './componentes/rollo/rollo.component';
 import {HttpClient, HttpClientModule  } from "@angular/common/http";
 
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {HttpClient, HttpClientModule  } from "@angular/common/http";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
