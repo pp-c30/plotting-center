@@ -9,6 +9,10 @@ import { UsuarioComponent } from './componentes/usuario/usuario.component';
 import { ImpresionComponent } from './componentes/impresion/impresion.component';
 import { RolloComponent } from './componentes/rollo/rollo.component';
 import {HttpClient, HttpClientModule  } from "@angular/common/http";
+<<<<<<< HEAD
+=======
+
+>>>>>>> e8ff4a1a9f0528805fa7eba1840565d8d3c50412
 import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({

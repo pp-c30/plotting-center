@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RolloService } from "../../services/rollo.service";
 
+import { FormBuilder, FormGroup } from "@angular/forms";
+
 @Component({
   selector: 'app-rollo',
   templateUrl: './rollo.component.html',
@@ -10,7 +12,17 @@ export class RolloComponent implements OnInit {
 
   listRollo = [];
 
-  constructor(private rolloServ:RolloService) {
+  formRollo: FormGroup;
+
+  constructor(private rolloServ:RolloService,private fb: FormBuilder) {
+
+    this.formRollo = this.fb.group({
+      
+      ancho:[''],
+      largo:[''], 
+      nombre:['']
+
+    });
 
    }
 
@@ -26,5 +38,22 @@ export class RolloComponent implements OnInit {
      error => console.log(error)
   )
   }
+
+guardarRollo()
+{
+  
+  //console.log(this.formRollo.value);
+
+  this.rolloServ.saveRollo(this.formRollo.value).subscribe(
+    resultado => {
+      console.log(resultado);
+      //se refresca la grilla
+      this.listarRollo();
+      this.formRollo.reset();
+    },
+    error => console.log(error)
+  );
+}
+
 }
 

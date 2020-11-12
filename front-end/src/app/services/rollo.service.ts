@@ -15,5 +15,12 @@ getRollo()
  return this.http.get<IRollo[]>('http://localhost:3000/rollo');
 }
 
+
+saveRollo(unRollo:IRollo)
+{
+ return this.http.post('http://localhost:3000/rollo', unRollo);
+ 
 }
 
+
+}
