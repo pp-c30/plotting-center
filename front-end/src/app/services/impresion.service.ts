@@ -10,7 +10,7 @@ export class ImpresionService {
   constructor(private http:HttpClient) { }
   getImpresion()
   {
-    this.http.get<Iimpresion[]>('http://localhost:3000/impresion')
+   return this.http.get<Iimpresion[]>('http://localhost:3000/impresion')
   }
 }
 
