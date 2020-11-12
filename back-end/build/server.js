@@ -10,7 +10,9 @@ const gramaje_routes_1 = __importDefault(require("./routes/gramaje.routes"));
 const profesion_routes_1 = __importDefault(require("./routes/profesion.routes"));
 const impresion_routes_1 = __importDefault(require("./routes/impresion.routes"));
 const cliente_routes_1 = __importDefault(require("./routes/cliente.routes"));
+const rollo_routes_1 = __importDefault(require("./routes/rollo.routes"));
 const morgan_1 = __importDefault(require("morgan"));
+const cors_1 = __importDefault(require("cors"));
 class Server {
     constructor() {
         //hace uso de express//
@@ -31,11 +33,13 @@ class Server {
         this.app.use(profesion_routes_1.default);
         this.app.use(impresion_routes_1.default);
         this.app.use(cliente_routes_1.default);
+        this.app.use(rollo_routes_1.default);
     }
     //configuraciones extras//
     middleware() {
         this.app.use(morgan_1.default('dev'));
         this.app.use(express_1.default.json());
+        this.app.use(cors_1.default());
     }
     //le da arranque al servidor//
     listen() {
