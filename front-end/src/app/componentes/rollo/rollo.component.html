@@ -58,10 +58,18 @@
       <table class=" table table-striped">
         <thead>
           <tr>
-            <th>Cliente</th>
+            <th>Id_Rollo</th>
             <th>Ancho</th>
             <th>Largo</th>
             <th>nombre</th>
+            <tbody>
+              <tr *ngFor="let rollo of listRollo">
+                <td>{{rollo.id_rollo}}</td>
+                <td>{{rollo.ancho}}</td>
+                <td>{{rollo.largo}}</td>
+                <td>{{rollo.nombre}}</td>
+              </tr>
+            </tbody>
           </tr>
         </thead>
         <tbody>

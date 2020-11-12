@@ -8,7 +8,7 @@ import { ClienteComponent } from './componentes/cliente/cliente.component';
 import { UsuarioComponent } from './componentes/usuario/usuario.component';
 import { ImpresionComponent } from './componentes/impresion/impresion.component';
 import { RolloComponent } from './componentes/rollo/rollo.component';
-import {HttpClientModule, HttpClient} from "@angular/common/http";
+import {HttpClient, HttpClientModule  } from "@angular/common/http";
 
 
 @NgModule({
