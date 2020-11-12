@@ -3,20 +3,19 @@
         <div class="card">
             <div class="card-header">Formulario de Impresiones</div>
             <div class="card-body">
-                <form>
-                    <div class="form-group"> <input type="text" placeholder="Tipo de color" class="form-control"></div>
-                    <div class="form-group"><input type="text" placeholder="Tamaño de area" class="form-control"></div>
-                    <div class="form-group"><input type="text" placeholder="Ancho" class="form-control"></div>
-                    <div class="form-group"><input type="text" placeholder="Largo" class="form-control"></div>
-                    <div class="form-group"> <input type="text" placeholder="Gramaje" class="form-control"></div>
-                    <div class="form-group"><input type="text" placeholder="Rollo" class="form-control"></div>
-                    <div class="form-group"><input type="text" placeholder="Cantidad" class="form-control"></div>
-                    <div class="form-group"><input type="text" placeholder="Correcciones" class="form-control"></div>
-                    <div class="form-group"><input type="text" placeholder="Precio por hora" class="form-control"></div>
-                    <div class="form-group"><input type="text" placeholder="Cliente" class="form-control"></div>
-                    <div class="form-group"><button class="btn btn-success">Calcular Precio</button>
-                        <input type="text" placeholder="Precio total" class="form-control"></div>
-                        <button class="btn btn-primary">Guardar Impresión</button>
+                <form [formGroup]="formImpresion" (ngSubmit)="guardarImpresiones">
+                    <div class="form-group"><input formControlName="tipo_color" type="text" placeholder="Tipo de color" class="form-control"></div>
+                    <div class="form-group"><input formControlName="tamanio_area" type="text" placeholder="Tamaño de area" class="form-control"></div>
+                    <div class="form-group"><input formControlName="ancho" type="text" placeholder="Ancho" class="form-control"></div>
+                    <div class="form-group"><input formControlName="largo" type="text" placeholder="Largo" class="form-control"></div>
+                    <div class="form-group"><input formControlName="gramaje" type="text" placeholder="Gramaje" class="form-control"></div>
+                    <div class="form-group"><input formControlName="rollo" type="text" placeholder="Rollo" class="form-control"></div>
+                    <div class="form-group"><input formControlName="cantidad" type="text" placeholder="Cantidad" class="form-control"></div>
+                    <div class="form-group"><input formControlName="correcciones" type="text" placeholder="Correcciones" class="form-control"></div>
+                    <div class="form-group"><input formControlName="precio_x_hora" type="text" placeholder="Precio por hora" class="form-control"></div>
+                    <div class="form-group"><input formControlName="cliente" type="text" placeholder="Cliente" class="form-control"></div>
+                    <div class="form-group"><input formControlName="precio_total" type="text" placeholder="Precio total" class="form-control"></div>
+                    <button class="btn btn-primary">Guardar Impresión</button>
                 </form>
             </div>
         </div>

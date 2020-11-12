@@ -12,6 +12,12 @@ export class ImpresionService {
   {
    return this.http.get<Iimpresion[]>('http://localhost:3000/impresion')
   }
+
+  saveImpresion(unaImpresion:Iimpresion)
+  {
+     return this.http.post('http://localhost:3000/impresion',unaImpresion);
+    
+  }
 }
 
 

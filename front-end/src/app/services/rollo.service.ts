@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-
 import {IRollo} from "../models/rollo";
 
 
@@ -9,11 +8,7 @@ import {IRollo} from "../models/rollo";
 })
 export class RolloService {
 
-  constructor(private http:HttpClient) {
-
-
-   }
-
+  constructor(private http:HttpClient) { }
 
 getRollo()
 {
