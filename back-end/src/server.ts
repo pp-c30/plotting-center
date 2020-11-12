@@ -6,6 +6,7 @@ import enrutadorImpresion from "./routes/impresion.routes";
 import enrutadorCliente from "./routes/cliente.routes";
 import enrutadorRollo from "./routes/rollo.routes";
 import morgan from "morgan";
+import cors from "cors";
 
 
 export class Server {
@@ -47,6 +48,7 @@ export class Server {
     {
       this.app.use(morgan('dev'));
       this.app.use(express.json());
+      this.app.use(cors());
      
     }
 
