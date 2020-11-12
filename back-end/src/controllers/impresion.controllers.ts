@@ -34,7 +34,7 @@ import { iimpresion } from '../models/impresion';
 
 
        //Inserta los datos en la base de datos
-       await db.query('insert into gramaje set ?',[impresion]);
+       await db.query('insert into impresion set ?',[impresion]);
 
        //Retorna un mensaje despues de realizarse todo de forma correcta
        return res.json('La impresion fue guardada corecctamente');
