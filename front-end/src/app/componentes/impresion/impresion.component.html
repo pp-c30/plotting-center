@@ -3,7 +3,7 @@
         <div class="card">
             <div class="card-header">Formulario de Impresiones</div>
             <div class="card-body">
-                <form [formGroup]="formImpresion" (ngSubmit)="guardarImpresiones">
+                <form [formGroup]="formImpresion" (ngSubmit)="guardarImpresiones()">
                     <div class="form-group"><input formControlName="tipo_color" type="text" placeholder="Tipo de color" class="form-control"></div>
                     <div class="form-group"><input formControlName="tamanio_area" type="text" placeholder="Tamaño de area" class="form-control"></div>
                     <div class="form-group"><input formControlName="ancho" type="text" placeholder="Ancho" class="form-control"></div>
