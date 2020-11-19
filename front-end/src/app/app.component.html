@@ -1,5 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Plotting Center</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="cliente">Clientes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="gramaje">Gramaje</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="impresion">Impresión</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="profesion">Profesion</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="rollo">Rollo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="usuario">Usuario</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="p-3">
+    <router-outlet></router-outlet>
+  </div>
 
-<app-impresion></app-impresion>
-<br>
-<br>   
-<app-rollo></app-rollo>
