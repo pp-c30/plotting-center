@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ImpresionService } from "../../services/impresion.service";
 import { FormBuilder,FormGroup } from "@angular/forms";
-import { Iimpresion } from 'src/app/models/impresion';
+import { IImpresion } from 'src/app/models/impresion';
 @Component({
   selector: 'app-impresion',
   templateUrl: './impresion.component.html',
@@ -16,7 +16,7 @@ export class ImpresionComponent implements OnInit {
   constructor(private ImpresionServi:ImpresionService, private fb:FormBuilder) {
 
     this.formImpresion = this.fb.group({
-      id_impresion:['null'],
+      id_impresion:[],
       tipo_color: [''],
       tamanio_area:[''],
       ancho: [''],
@@ -71,7 +71,7 @@ export class ImpresionComponent implements OnInit {
    }
   }
 
-  editarImpresion(impresion:Iimpresion)
+  editarImpresion(impresion:IImpresion)
   {
    this.formImpresion.setValue(impresion);
   }
