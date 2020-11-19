@@ -4,6 +4,7 @@
             <div class="card-header">Formulario de Impresiones</div>
             <div class="card-body">
                 <form [formGroup]="formImpresion" (ngSubmit)="guardarImpresiones()">
+                    <input formControlName="id_impresion" type="hidden" >
                     <div class="form-group"><input formControlName="tipo_color" type="text" placeholder="Tipo de color" class="form-control"></div>
                     <div class="form-group"><input formControlName="tamanio_area" type="text" placeholder="Tamaño de area" class="form-control"></div>
                     <div class="form-group"><input formControlName="ancho" type="text" placeholder="Ancho" class="form-control"></div>
@@ -38,10 +39,12 @@
                   <th>Precio por hora</th>
                   <th>Precio Total</th>
                   <th>Cliente</th>
+                  <th>Operaciones</th>
               </tr>
           </thead>
           <tbody>
               <tr *ngFor="let impresion of listaImpresion">
+                  <td>{{impresion.id_impresion}}</td>
                   <td>{{impresion.tipo_color}}</td>
                   <td>{{impresion.tamanio_area}}</td>
                   <td>{{impresion.ancho}}</td>
@@ -54,6 +57,12 @@
                   <td>{{impresion.precio_x_hora}}</td> 
                   <td>{{impresion.precio_total}}</td>
                   <td>{{impresion.cliente}}</td>
+                  <td>
+                      <div class="btn-group">
+                          <button (click)="eliminarImpresion(impresion.id_impresion)" class="btn btn-danger">Eliminar</button>
+                          <button (click)="editarImpresion(impresion)" class="btn btn-primary">Editar</button>
+                      </div>
+                  </td>
                   
               </tr>
 

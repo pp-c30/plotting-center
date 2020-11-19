@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ImpresionService } from "../../services/impresion.service";
 import { FormBuilder,FormGroup } from "@angular/forms";
+import { Iimpresion } from 'src/app/models/impresion';
 @Component({
   selector: 'app-impresion',
   templateUrl: './impresion.component.html',
@@ -15,6 +16,7 @@ export class ImpresionComponent implements OnInit {
   constructor(private ImpresionServi:ImpresionService, private fb:FormBuilder) {
 
     this.formImpresion = this.fb.group({
+      id_impresion:['null'],
       tipo_color: [''],
       tamanio_area:[''],
       ancho: [''],
@@ -44,6 +46,19 @@ export class ImpresionComponent implements OnInit {
 
   guardarImpresiones()
   {
+    if(this.formImpresion.value.id_impresion)
+    {
+      this.ImpresionServi.updateImpresion(this.formImpresion.value).subscribe(
+        respuesta => {
+          console.log(respuesta);
+          this.obtenerImpresiones();
+          this.formImpresion.reset();
+        },
+        error => console.log(error)
+      )
+    }
+    else
+    {
     this.ImpresionServi.saveImpresion(this.formImpresion.value).subscribe(
       resultado => {
         console.log(resultado);
@@ -53,6 +68,27 @@ export class ImpresionComponent implements OnInit {
       error => console.log(error)
       
     );
+   }
+  }
+
+  editarImpresion(impresion:Iimpresion)
+  {
+   this.formImpresion.setValue(impresion);
+  }
+
+  eliminarImpresion(id:number)
+  {
+    if(confirm('Esta seguro que desea eliminar?')){
+    this.ImpresionServi.deleteImpresion(id).subscribe(
+      respuesta => {
+        console.log(respuesta);
+        this.obtenerImpresiones();
+      },
+      error => console.log(error)
+      );
+       
+    }
+
   }
 
 }

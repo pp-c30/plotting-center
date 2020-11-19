@@ -18,6 +18,17 @@ export class ImpresionService {
      return this.http.post('http://localhost:3000/impresion',unaImpresion);
     
   }
+
+  updateImpresion(unaImpresion:Iimpresion)
+  {
+     let id:number = unaImpresion.id_impresion;
+     return this.http.put('http://localhost:3000/impresion/'+id,unaImpresion);
+  }
+
+  deleteImpresion(id:number)
+  {
+   return this.http.delete('http://localhost:3000/impresion/'+id);
+  }
 }
 
 
