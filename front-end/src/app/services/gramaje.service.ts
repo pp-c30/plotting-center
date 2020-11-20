@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { from } from 'rxjs';
 import { HttpClient} from "@angular/common/http";
-
 import { Igramaje } from "../models/gramaje";
 
 @Injectable({
@@ -9,9 +7,7 @@ import { Igramaje } from "../models/gramaje";
 })
 export class GramajeService {
 
-  constructor(private http:HttpClient) {
-    
-   }
+  constructor(private http:HttpClient) { }
 
    getgramaje()
    {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { FormBuilder,FormGroup } from "@angular/forms";
 import { GramajeService } from "../../services/gramaje.service";
+import { Igramaje } from "src/app/models/gramaje";
 
 @Component({
   selector: 'app-gramaje',
@@ -11,13 +12,9 @@ export class GramajeComponent implements OnInit {
 
   listgramajes=[];
 
-  constructor(private gramajeserv:GramajeService) { 
-
-
-  }
+  constructor(private gramajeserv:GramajeService) { }
 
   ngOnInit(): void {
-
     this.listargramajes();
   }
 
