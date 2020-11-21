@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ImpresionService } from "../../services/impresion.service";
-import { FormBuilder,FormGroup } from "@angular/forms";
+import { FormBuilder,FormGroup,Validators } from "@angular/forms";
 import { IImpresion } from 'src/app/models/impresion';
 @Component({
   selector: 'app-impresion',
@@ -23,12 +23,12 @@ export class ImpresionComponent implements OnInit {
       largo:[''],
       gramaje : [''],
       rollo : [''],
-      cantidad: [''],
+      cantidad: ['',[Validators.required]],
       correcciones: [''],
       tiempo_co: [''],
       precio_x_hora : [''],
       precio_total: [''],
-      cliente : ['']
+      cliente : ['',[Validators.required, Validators.minLength(1)]]
     })
    }
 
