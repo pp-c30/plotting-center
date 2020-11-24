@@ -1,6 +1,6 @@
 <div class="row">
 
-    <div class="col-sm-8">
+    <div class="col-sm-6">
 
         <table class="table table-striped">
            <thead>
@@ -11,15 +11,17 @@
            </thead>    
 
                 <tbody>
-                     <tr *ngforce="let gramaje of listgramaje"> </tr>  
-                     <td>{{gramaje.gramaje}}</td> 
-                     <td>{{gramaje.id_gramaje}}</td> 
+                     <tr *ngFor="let gramaje of listgramajes">
+                        <td>{{gramaje.gramaje}}</td> 
+                        <td>{{gramaje.id_gramaje}}</td> 
+                    </tr>  
+                    
                 </tbody>
         </table>
     </div>
 
 
-    <div class="col-sm-8">
+    <div class="col-sm-6">
 
         <div class="card">
           <div class="card-heard">gramajes</div>
@@ -30,7 +32,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input placeholder="ingrese el  ID del gramaje" type="text" class="from-control">
+                    <input placeholder="ingrese el  ID del gramaje" type="hidden" class="from-control">
                 </div>
 
                 <button class="btn btn-success"> guardar gramaje</button>
