@@ -11,7 +11,7 @@ export class GramajeService {
 
    getgramaje()
    {
-     return this.http.get<Igramaje[]>('http://locahotst:3000/gramaje')
+     return this.http.get<Igramaje[]>('http://localhost:3000/gramaje')
    }
 
 }
