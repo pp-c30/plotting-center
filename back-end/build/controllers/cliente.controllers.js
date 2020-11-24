@@ -9,7 +9,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Clientecontroller = void 0;
 //importo la funcion conexcion desde el archivo database
 const database_1 = require("../database");
 //se crea (y exporta) la clase "Clientecontroller" para alojar metodos publicos porque son accedidos desde otros archivos
