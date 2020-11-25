@@ -1,20 +1,52 @@
-<div class="col-sm-8">
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>id gramaje</th>
-                <th>gramaje</th>
-               
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let gramaje off listargramaje">
-                <td>{{id gramaje}}</td>
-                <td>{{gramaje}}</td>
+<div class="row">
 
-                
-            </tr>
+    <div class="col-sm-6">
 
-        </tbody>
-    </table>
-  </div>
+        <table class="table table-striped">
+           <thead>
+                <tr>
+                    <th>gramajes</th>
+                    <th>id gramajes</th>
+                </tr>
+           </thead>    
+
+                <tbody>
+                     <tr *ngFor="let gramaje of listgramajes">
+                        <td>{{gramaje.gramaje}}</td> 
+                        <td>{{gramaje.id_gramaje}}</td> 
+                    </tr>  
+                    
+                </tbody>
+        </table>
+    </div>
+
+
+    <div class="col-sm-6">
+
+        <div class="card">
+          <div class="card-heard">gramajes</div>
+          <div class="card-body"> 
+            <form>
+                <div class="form-group">
+                    <input placeholder="ingrese el gramaje" type="text" class="from-control">
+                </div>
+
+                <div class="form-group">
+                    <input placeholder="ingrese el  ID del gramaje" type="hidden" class="from-control">
+                </div>
+
+                <button class="btn btn-success"> guardar gramaje</button>
+            </form>
+          </div>
+
+        </div>
+
+
+    </div>
+  
+
+</div>
+
+
+
+

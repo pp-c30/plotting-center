@@ -9,7 +9,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Gramajecontrollers = void 0;
 //Importamos la funcion "conexion" desde el archivo database
 const database_1 = require("../database");
 //Clase que nos permite alamacenar metodos
@@ -22,7 +21,7 @@ class Gramajecontrollers {
             //Realizamos la consulta para mostrar los datos de la tabla gramaje
             let gramaje = yield db.query('select * from gramaje');
             //Retorna una respuesta en formato json de gramaje
-            return res.json(gramaje);
+            res.json(gramaje);
         });
     }
     //Metodo que guarda datos en la clase
@@ -35,7 +34,7 @@ class Gramajecontrollers {
             //Inserta los datos en la base de datos
             yield db.query('insert into gramaje set ?', [gramaje]);
             //Retorna un mensaje despues de realizarse todo de forma correcta
-            return res.json('el gramaje fue guardado corecctamente');
+            res.json('el gramaje fue guardado corecctamente');
         });
     }
     //Metodo que nos permite eliminar datos 
@@ -48,7 +47,7 @@ class Gramajecontrollers {
             //Realiza la eliminacion del gramaje
             yield db.query('delete from gramaje where id_gramaje = ?', [codigo]);
             //Retorna un mensaje despues de realizarse todo de forma correcta
-            return res.json('el gramaje fue eliminado corecctamente');
+            res.json('el gramaje fue eliminado corecctamente');
         });
     }
     //Metodo que nos permite actualizar datos
@@ -63,7 +62,7 @@ class Gramajecontrollers {
             //Realiza la actualizacion
             yield db.query('update gramaje set ? where id_gramaje = ?', [gramaje_actualizado, codigo]);
             //Retorno un mensaje despues de realizarse todo correctamente
-            return res.json('se actualizo correctamente');
+            res.json('se actualizo correctamente');
         });
     }
     //Motodo que lista una gramaje en especifico
@@ -76,7 +75,7 @@ class Gramajecontrollers {
             //Realiza la seleccion de una consola y la guarda en una variable
             let ungramaje = yield db.query('select * from gramaje where id_gramaje = ?', [codigo]);
             //Retorna la consola selecciona
-            return res.json(ungramaje[0]);
+            res.json(ungramaje[0]);
         });
     }
 }

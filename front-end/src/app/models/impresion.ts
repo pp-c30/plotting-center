@@ -1,4 +1,4 @@
-export interface Iimpresion 
+export interface IImpresion 
 {
         id_impresion?:number;
          tipo_color: string;

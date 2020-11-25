@@ -9,7 +9,7 @@ import { UsuarioComponent } from './componentes/usuario/usuario.component';
 import { ImpresionComponent } from './componentes/impresion/impresion.component';
 import { RolloComponent } from './componentes/rollo/rollo.component';
 import {HttpClient, HttpClientModule  } from "@angular/common/http";
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -25,7 +25,8 @@ import { ReactiveFormsModule } from "@angular/forms";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
