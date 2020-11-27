@@ -12,7 +12,18 @@ export class GramajeComponent implements OnInit {
 
   listgramajes=[];
 
-  constructor(private gramajeserv:GramajeService) { }
+  Formgramaje: FormGroup;
+
+  constructor(private gramajeserv:GramajeService, private fb: FormBuilder) {
+
+    this.Formgramaje= this.fb.group({
+
+      gramaje: [''],
+      id_gramaje: ['']
+
+      })
+
+   }
 
   ngOnInit(): void {
     this.listargramajes();
@@ -25,6 +36,21 @@ export class GramajeComponent implements OnInit {
       error=> console.log(error)
     )
 
+  }
+
+  guardargramajes(){
+
+    
+
+    this.gramajeserv.savegramaje(this.Formgramaje.value).subscribe(
+      resultado => {
+
+          console.log(resultado);
+        
+          this.Formgramaje.reset();
+
+      }
+    )
   }
 
 }

@@ -26,13 +26,13 @@
         <div class="card">
           <div class="card-heard">gramajes</div>
           <div class="card-body"> 
-            <form>
+            <form [formGroup] = "Formgramaje" (ngSubmit)="guardargramajes()">
                 <div class="form-group">
-                    <input placeholder="ingrese el gramaje" type="text" class="from-control">
+                    <input formCrontorlName ="gramaje" placeholder="ingrese el gramaje" type="text" class="from-control">
                 </div>
 
                 <div class="form-group">
-                    <input placeholder="ingrese el  ID del gramaje" type="hidden" class="from-control">
+                    <input formCrontorlName ="id_gramaje"placeholder="ingrese el  ID del gramaje" type="hidden" class="from-control">
                 </div>
 
                 <button class="btn btn-success"> guardar gramaje</button>

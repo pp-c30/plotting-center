@@ -14,4 +14,11 @@ export class GramajeService {
      return this.http.get<Igramaje[]>('http://localhost:3000/gramaje')
    }
 
+   savegramaje(ungramaje:Igramaje)
+   {
+
+     return  this.http.post('http://localhost:3000/gramaje',ungramaje);
+      
+   }
+
 }
