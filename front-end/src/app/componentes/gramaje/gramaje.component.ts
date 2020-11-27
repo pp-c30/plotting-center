@@ -50,7 +50,14 @@ export class GramajeComponent implements OnInit {
           this.Formgramaje.reset();
 
       }
-    )
+    );
+    }
+
+    Editargramaje(){
+
+
+
+    }
   }
 
-}
+
