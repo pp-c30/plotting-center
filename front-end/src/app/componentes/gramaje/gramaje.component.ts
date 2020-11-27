@@ -46,7 +46,7 @@ export class GramajeComponent implements OnInit {
       resultado => {
 
           console.log(resultado);
-        
+          this.listargramajes();
           this.Formgramaje.reset();
 
       }
