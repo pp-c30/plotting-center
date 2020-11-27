@@ -7,6 +7,7 @@
                 <tr>
                     <th>gramajes</th>
                     <th>id gramajes</th>
+                    <th>operaciones</th>
                 </tr>
            </thead>    
 
@@ -14,6 +15,16 @@
                      <tr *ngFor="let gramaje of listgramajes">
                         <td>{{gramaje.gramaje}}</td> 
                         <td>{{gramaje.id_gramaje}}</td> 
+                        <td>
+
+                            <div class="btn-group btn btn-group-sm">
+
+                                <button class="btn btn-danger">Eliminar</button>
+                                <button (click)= "Editargramaje" class="btn btn-primary">Editar</button>
+                            </div>
+
+
+                        </td> 
                     </tr>  
                     
                 </tbody>
