@@ -19,7 +19,7 @@ export class GramajeComponent implements OnInit {
     this.Formgramaje= this.fb.group({
 
       gramaje: [''],
-      id_gramaje: ['']
+      id_gramaje: [null]
 
       })
 
@@ -53,9 +53,9 @@ export class GramajeComponent implements OnInit {
     );
     }
 
-    Editargramaje(){
+    Editargramaje(gramajes:Igramaje){
 
-
+      this.Formgramaje.setValue(gramajes);
 
     }
   }
