@@ -1,1 +1,41 @@
-<p>cliente works!</p>
+<div class="row">
+    <div class="coll-sm-8">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>nombre razon social</th>
+                    <th>DNI-cuit</th>
+                    <th>telefono-celular</th>
+                    <th>profesion</th>
+                    <th>correo electronico</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cliente of listCliente">
+                    <td>{{cliente.nombre_razon_social}}</td>
+                    <td>{{cliente.dni_cuit}}</td>
+                    <td>{{cliente.telefono_celular}}</td>
+                    <td>{{cliente.profesion}}</td>
+                    <td>{{cliente.correo_electronico}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="coll-sm-4">
+        <div class="card">
+            <div class="card-header">formulario del cliente</div>
+            <div class="car-body"></div>
+            <form>
+                <div class="form-group"><input placeholder="nombre y apellido" type="text" class="form-control"></div>
+                <div class="form-group"><input placeholder="DNI o CUIT" type="text" class="form-control"></div>
+                <div class="form-group"><input placeholder="numero de telefono o celular" type="text" class="form-control"></div>
+                <div class="form-group"><input placeholder="profesion" type="text" class="form-control"></div>
+                <div class="form-group"><input placeholder="correo electronico" type="text" class="form-control"></div>
+
+                <button class="btn btn-success">guardar cliente</button>
+            </form>
+
+        </div>
+    </div>
+</div>

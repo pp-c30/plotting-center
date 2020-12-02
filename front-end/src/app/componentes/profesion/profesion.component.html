@@ -1,1 +1,32 @@
-<p>profesion works!</p>
+
+<div class="row">
+    <div class="col-sm-6">
+     <table class="table table-striped">
+         <thead>
+             <tr>
+                 <th>ID Profesión</th>
+                 <th>Descripción</th>
+             </tr>
+         </thead>
+         <tbody>
+           <tr *ngFor="let profesion of lisProfesion">
+                <td>{{profesion.id_profesion}}</td>
+                <td>{{profesion.descripcion}}</td>
+           </tr>
+         </tbody>
+     </table>
+    </div>
+    <div class="co-sm-6">
+      <div class="card">
+          <div class="card-header">Agregando Profesion</div>
+          <div class="card-body">
+              <form>
+                  <div class="form-group">
+                     <input placeholder="Ingrese el nombre de la profesion" type="text" class="form-control" >
+                  </div>
+                  <button class="btn btn-success">Guardar profesion</button>
+              </form>
+          </div>
+      </div>
+    </div>
+</div>

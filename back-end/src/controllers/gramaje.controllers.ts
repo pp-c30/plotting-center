@@ -20,7 +20,7 @@ import { igramaje } from '../models/gramaje';
         let gramaje = await db.query('select * from gramaje');
 
         //Retorna una respuesta en formato json de gramaje
-        return res.json(gramaje);
+         res.json(gramaje);
 
 
 
@@ -40,7 +40,7 @@ import { igramaje } from '../models/gramaje';
         await db.query('insert into gramaje set ?',[gramaje]);
 
         //Retorna un mensaje despues de realizarse todo de forma correcta
-        return res.json('el gramaje fue guardado corecctamente');
+         res.json('el gramaje fue guardado corecctamente');
 
     }
     
@@ -57,7 +57,7 @@ import { igramaje } from '../models/gramaje';
         await db.query('delete from gramaje where id_gramaje = ?',[codigo]);
 
         //Retorna un mensaje despues de realizarse todo de forma correcta
-        return res.json('el gramaje fue eliminado corecctamente');
+        res.json('el gramaje fue eliminado corecctamente');
 
 
     }
@@ -77,7 +77,7 @@ import { igramaje } from '../models/gramaje';
         await db.query('update gramaje set ? where id_gramaje = ?',[gramaje_actualizado,codigo]);
 
         //Retorno un mensaje despues de realizarse todo correctamente
-        return res.json ('se actualizo correctamente');
+        res.json ('se actualizo correctamente');
 
     }
      //Motodo que lista una gramaje en especifico
@@ -93,7 +93,7 @@ import { igramaje } from '../models/gramaje';
         let ungramaje = await db.query('select * from gramaje where id_gramaje = ?',[codigo]);
         
         //Retorna la consola selecciona
-        return res.json(ungramaje[0]);
+         res.json(ungramaje[0]);
     }
 
 }
