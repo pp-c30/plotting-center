@@ -23,4 +23,16 @@ saveRollo(unRollo:IRollo)
 }
 
 
+updateRollo(unRollo:IRollo)
+{
+  let id:number = unRollo.id_rollo;
+  return this.http.put('http://localhost:3000/rollo'+id,unRollo);
+}
+
+
+deleteRollo(id:number)
+{
+  this.http.delete('http://localhost:3000/rollo/'+id);
+}
+
 }

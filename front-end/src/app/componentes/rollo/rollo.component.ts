@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RolloService } from "../../services/rollo.service";
 
 import { FormBuilder, FormGroup } from "@angular/forms";
+import { IRollo } from 'src/app/models/rollo';
 
 @Component({
   selector: 'app-rollo',
@@ -17,7 +18,7 @@ export class RolloComponent implements OnInit {
   constructor(private rolloServ:RolloService,private fb: FormBuilder) {
 
     this.formRollo = this.fb.group({
-      
+      id_rollo:[null],
       ancho:[''],
       largo:[''], 
       nombre:['']
@@ -42,8 +43,19 @@ export class RolloComponent implements OnInit {
 guardarRollo()
 {
   
-  //console.log(this.formRollo.value);
+  if(this.formRollo.value.id_rollo)
+  {
+    //se actualiza
+    this.rolloServ.updateRollo(this.formRollo.value).subscribe(
+      respuesta => {
+        console.log(respuesta);
+        this.listarRollo();
+        this.formRollo.reset();
+      },
+    error => console.log(error)
+    )
 
+  }else{
   this.rolloServ.saveRollo(this.formRollo.value).subscribe(
     resultado => {
       console.log(resultado);
@@ -54,6 +66,15 @@ guardarRollo()
     error => console.log(error)
   );
 }
+
+
+}
+editarRollo(rollo:IRollo)
+{
+  this.formRollo.setValue(rollo);
+}
+
+
 
 }
 
