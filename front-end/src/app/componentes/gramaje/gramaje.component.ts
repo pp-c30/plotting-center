@@ -18,7 +18,7 @@ export class GramajeComponent implements OnInit {
 
     this.Formgramaje= this.fb.group({
 
-      gramaje: ['',[Validators.required,Validators.minLength(1)] ],
+      gramaje: ['',[Validators.required,Validators.minLength(2)] ],
       id_gramaje: [null]
 
       })
