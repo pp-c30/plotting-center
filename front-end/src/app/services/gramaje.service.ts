@@ -21,4 +21,14 @@ export class GramajeService {
       
    }
 
+   updateGramaje(ungramaje:Igramaje)
+   {
+      let id= ungramaje.id_gramaje;
+        this.http.put('http://localhost:3000/gramaje/'+id,ungramaje);
+
+
+
+
+   }
+
 }
