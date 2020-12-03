@@ -42,7 +42,7 @@ export class GramajeComponent implements OnInit {
 
     if(this.Formgramaje.value.id_gramaje){
 
-      this.Formgramaje.updateGramajes(this.Formgramaje.value).subscribe(
+      this.gramajeserv.updateGramajes(this.Formgramaje.value).subscribe(
           respuesta =>{
                       console.log(respuesta)
                       this.listargramajes();
