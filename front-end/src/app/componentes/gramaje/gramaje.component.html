@@ -1,29 +1,4 @@
-<<<<<<< HEAD
-<!--
 
-
-<div class="col-sm-8">
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>id gramaje</th>
-                <th>gramaje</th>
-               
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let gramaje off listargramaje">
-                <td>{{id gramaje}}</td>
-                <td>{{gramaje}}</td>
-
-                
-            </tr>
-
-        </tbody>
-    </table>
-  </div>
--->
-=======
 <div class="row">
 
     <div class="col-sm-6">
@@ -45,8 +20,8 @@
 
                             <div class="btn-group btn btn-group-sm">
 
-                                <button (click) = 'Eliminargramaje(gramajes)' class="btn btn-danger">Eliminar</button>
-                                <button (click)= "Editargramaje(gramajes)" class="btn btn-primary">Editar</button>
+                                <button (click) = 'eliminargramaje(gramaje.id_gramaje)' class="btn btn-danger">Eliminar</button>
+                                <button (click)= "Editargramaje(gramaje)" class="btn btn-primary">Editar</button>
                             </div>
 
 
@@ -87,4 +62,3 @@
 
 
 
->>>>>>> a5bdaf2b2111fdbd1e9184b5b2bc8fe9279f7613
