@@ -42,9 +42,21 @@ export class GramajeComponent implements OnInit {
 
     if(this.Formgramaje.value.id_gramaje){
 
-      this.Formgramaje.updateGramaje(this.Formgramaje.value)
+      this.Formgramaje.updateGramajes(this.Formgramaje.value).subscribe(
+          respuesta =>{
+                      console.log(respuesta)
+                      this.listargramajes();
+                      this.Formgramaje.reset();
 
-    }
+          },
+
+          error => console.log(error)
+
+
+          );
+        
+      
+        }
     else{
 
       this.gramajeserv.savegramaje(this.Formgramaje.value).subscribe(
@@ -58,9 +70,7 @@ export class GramajeComponent implements OnInit {
       );
 
     }
-    
 
-   
     }
 
     Editargramaje(gramajes:Igramaje){
@@ -68,6 +78,20 @@ export class GramajeComponent implements OnInit {
       this.Formgramaje.setValue(gramajes);
 
     }
-  }
 
+    eliminargramaje(id:number){
+
+        if(confirm('esta seguro que quiere ejecutar esta accion?')){
+          this.gramajeserv.deletegramaje(id).subscribe(
+            respuesta  => {
+              console.log(respuesta);
+              this.listargramajes();
+  
+            },
+            error => console.log(error)
+  
+            );
+        }
+      }
+    }
 
