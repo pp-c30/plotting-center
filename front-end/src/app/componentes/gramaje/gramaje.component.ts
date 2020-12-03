@@ -40,17 +40,27 @@ export class GramajeComponent implements OnInit {
 
   guardargramajes(){
 
+    if(this.Formgramaje.value.id_gramaje){
+
+      this.Formgramaje.updateGramaje(this.Formgramaje.value)
+
+    }
+    else{
+
+      this.gramajeserv.savegramaje(this.Formgramaje.value).subscribe(
+        resultado => {
+  
+            console.log(resultado);
+            this.listargramajes();
+            this.Formgramaje.reset();
+  
+        }
+      );
+
+    }
     
 
-    this.gramajeserv.savegramaje(this.Formgramaje.value).subscribe(
-      resultado => {
-
-          console.log(resultado);
-          this.listargramajes();
-          this.Formgramaje.reset();
-
-      }
-    );
+   
     }
 
     Editargramaje(gramajes:Igramaje){
