@@ -10,6 +10,7 @@ import { ImpresionComponent } from './componentes/impresion/impresion.component'
 import { RolloComponent } from './componentes/rollo/rollo.component';
 import {HttpClient, HttpClientModule  } from "@angular/common/http";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { Ng2SearchPipeModule} from "ng2-search-filter";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
