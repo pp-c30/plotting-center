@@ -3,9 +3,15 @@
 
     <div class="col-sm-6">
 
-        
+        <div class="row">
 
-            <input type="text" class="form-control">
+            <div class="col-sm-4">
+            <div class="form-group">
+            <input [(ngModel)]= "buscarGramaje"  type="text" class="form-control">
+
+                 </div>
+             </div>
+        </div>
         <table class="table table-striped">
            <thead>
                 <tr>
@@ -16,7 +22,7 @@
            </thead>    
 
                 <tbody>
-                     <tr *ngFor="let gramaje of listgramajes">
+                     <tr *ngFor="let gramaje of listgramajes | filter:buscarGramaje">
                         <td>{{gramaje.gramaje}}</td> 
                         <td>{{gramaje.id_gramaje}}</td> 
                         <td>
