@@ -22,7 +22,7 @@
            </thead>    
 
                 <tbody>
-                     <tr *ngFor="let gramaje of listgramajes | filter:buscarGramaje | paginate:{itemsperpage:3, currentPage:p}">
+                     <tr *ngFor="let gramaje of listgramajes | filter:buscarGramaje | paginate:{ itemsPerPage:3, currentPage:p}">
                         <td>{{gramaje.gramaje}}</td> 
                         <td>{{gramaje.id_gramaje}}</td> 
                         <td>
