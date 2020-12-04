@@ -14,6 +14,8 @@ export class GramajeComponent implements OnInit {
 
   Formgramaje: FormGroup;
 
+  buscarGramaje:any;
+
   constructor(private gramajeserv:GramajeService, private fb: FormBuilder) {
 
     this.Formgramaje= this.fb.group({
