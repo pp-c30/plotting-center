@@ -22,7 +22,7 @@
            </thead>    
 
                 <tbody>
-                     <tr *ngFor="let gramaje of listgramajes | filter:buscarGramaje">
+                     <tr *ngFor="let gramaje of listgramajes | filter:buscarGramaje | paginate:{itemsperpage:3, currentPage:p}">
                         <td>{{gramaje.gramaje}}</td> 
                         <td>{{gramaje.id_gramaje}}</td> 
                         <td>
@@ -39,6 +39,13 @@
                     
                 </tbody>
         </table>
+            <div class="row">
+                    <div class="col-sm-4">
+                        <pagination-controls (pageChange) ="p = $event" ></pagination-controls>
+                    </div>
+
+            </div>
+
     </div>
 
 
