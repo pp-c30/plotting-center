@@ -5,14 +5,35 @@
             <div class="card-body">
                 <form [formGroup]="formImpresion" (ngSubmit)="guardarImpresiones()" novalidate>
                     <input formControlName="id_impresion" type="hidden" >
-                    <div class="form-group"><input formControlName="tipo_color" type="text" placeholder="Tipo de color" class="form-control"></div>
-                    <div class="form-group"><input formControlName="tamanio_area" type="text" placeholder="Tamaño de area" class="form-control"></div>
+                    <div class="form-group">
+                        <select formControlName="tipo_color" class="form-control" id="">
+                            <option disabled selected value="">Seleccione tipo de impresion</option>
+                            <option value="bn">Blanco y negro</option>
+                            <option value="c">Color</option>
+                        </select>
+                    </div>
                     <div class="form-group"><input formControlName="ancho" type="text" placeholder="Ancho" class="form-control"></div>
                     <div class="form-group"><input formControlName="largo" type="text" placeholder="Largo" class="form-control"></div>
-                    <div class="form-group"><input formControlName="gramaje" type="text" placeholder="Gramaje" class="form-control"></div>
-                    <div class="form-group"><input formControlName="rollo" type="text" placeholder="Rollo" class="form-control"></div>
-                    <div class="form-group"><input formControlName="cantidad" type="text" placeholder="Cantidad" class="form-control"></div>
-                    <div class="form-group"><input formControlName="correcciones" type="text" placeholder="Correcciones" class="form-control"></div>
+                    <div class="form-group">
+                        <select class="form-control" formControlName="gramaje" id="">
+                            <option disabled selected value="">Seleccione Gramaje</option>
+                            <option *ngFor="let gramaje of listaGramaje" [value]="gramaje.id_gramaje">{{gramaje.gramaje}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" formControlName="rollo" id="">
+                            <option disabled selected value="">Seleccione tipo de Rollo</option>
+                            <option *ngFor="let rollo of listaRollo" [value]="rollo.id_rollo">{{rollo.nombre}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><input formControlName="cantidad" type="number" placeholder="Cantidad" class="form-control"></div>
+                    <div class="form-group">
+                        <select formControlName="correcciones" class="form-control" id="">
+                            <option disabled selected value="">Seleccione correccion</option>
+                            <option value="1">Si</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
                     <div class="form-group"><input formControlName="tiempo_co" type="text" placeholder="Tiempo" class="form-control"></div>
                     <div class="form-group"><input formControlName="precio_x_hora" type="text" placeholder="Precio por hora" class="form-control"></div>
                     <div class="form-group"><input [ngClass]="{'ins-invalid':formImpresion.get('cliente')?.touched}" formControlName="cliente" type="text" placeholder="Cliente" class="form-control"></div>

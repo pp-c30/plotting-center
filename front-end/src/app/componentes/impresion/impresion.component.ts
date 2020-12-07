@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ImpresionService } from "../../services/impresion.service";
+import { GramajeService} from "../../services/gramaje.service";
+import { RolloService } from "../../services/rollo.service";
 import { FormBuilder,FormGroup,Validators } from "@angular/forms";
 import { IImpresion } from 'src/app/models/impresion';
 @Component({
@@ -11,9 +13,13 @@ export class ImpresionComponent implements OnInit {
 
   listaImpresion = [];
 
+  listaGramaje = [];
+
+  listaRollo = [];
+
   formImpresion: FormGroup;
 
-  constructor(private ImpresionServi:ImpresionService, private fb:FormBuilder) {
+  constructor(private ImpresionServi:ImpresionService, private fb:FormBuilder, private gramajeServ:GramajeService, private rolloServ:RolloService) {
 
     this.formImpresion = this.fb.group({
       id_impresion:[],
@@ -34,6 +40,8 @@ export class ImpresionComponent implements OnInit {
 
   ngOnInit(): void {
     this.obtenerImpresiones();
+    this.obtenerGramajes();
+    this.obtenerRollo();
   }
 
   obtenerImpresiones()
@@ -90,5 +98,26 @@ export class ImpresionComponent implements OnInit {
     }
 
   }
+
+  obtenerGramajes()
+  {
+    this.gramajeServ.getgramaje().subscribe(
+      respuesta => {
+        this.listaGramaje = respuesta;
+
+      }
+    )
+  }
+
+obtenerRollo()
+{
+  this.rolloServ.getRollo().subscribe(
+    respuesta => {
+      this.listaRollo = respuesta;
+    }
+  )
+}
+
+
 
 }
