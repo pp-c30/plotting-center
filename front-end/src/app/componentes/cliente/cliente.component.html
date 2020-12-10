@@ -1,12 +1,12 @@
 <div class="row">
-    <div class="coll-sm-4">
-        <div class="row">
-            <div class="col-sm-3">
-                <div class="form-group">
-                    <input placeholder="ingrese cliente a buscar" [(ngModel)]="buscarCliente" type="text" class="form-control">
-                </div>
-            </div>
+    <div class="col-sm-3">
+        <div class="form-group">
+            <input placeholder="ingrese cliente a buscar" [(ngModel)]="buscarCliente" type="text" class="form-control">
         </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-8">
 
         <table class="table table-striped">
             <thead>
@@ -38,21 +38,22 @@
                 </tr>
             </tbody>
         </table>
-        <div class="col-sm-8">
-            <div class="card">
-                <div class="card-header">formulario del cliente</div>
-                <div class="car-body"></div>
-                <form [formGroup]="formCliente" (ngSubmit)="guardarCliente()" novalidate>
-                    <input formControlName="id_cliente" type="hidden">
-                    <div class="form-group"><input [ngClass]="{'ins-invalid':formCliente.get('nombre_razon_social')?.touched}" formControlName="nombre_razon_social" type="text" placeholder="nombre o razon social" type="text" class="form-control"></div>
-                    <div class="form-group"><input [ngClass]="{'ins-invalid':formCliente.get('dni_cuit')?.touched}" formControlName="dni_cuit" type="text" placeholder="DNI o CUIT" type="text" class="form-control"></div>
-                    <div class="form-group"><input formControlName="telefono_celular" type="text" placeholder="numero de telefono o celular" type="text" class="form-control"></div>
-                    <div class="form-group"><input [ngClass]="{'ins-invalid':formCliente.get('profesion')?.touched}" formControlName="profesion" type="text" placeholder="profesion" type="text" class="form-control"></div>
-                    <div class="form-group"><input formControlName="correo_electronico" type="text" placeholder="correo electronico" type="text" class="form-control"></div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-header">formulario del cliente</div>
+            <div class="car-body"></div>
+            <form [formGroup]="formCliente" (ngSubmit)="guardarCliente()" novalidate>
+                <input formControlName="id_cliente" type="hidden">
+                <div class="form-group"><input [ngClass]="{'ins-invalid':formCliente.get('nombre_razon_social')?.touched}" formControlName="nombre_razon_social" type="text" placeholder="nombre o razon social" type="text" class="form-control"></div>
+                <div class="form-group"><input [ngClass]="{'ins-invalid':formCliente.get('dni_cuit')?.touched}" formControlName="dni_cuit" type="text" placeholder="DNI o CUIT" type="text" class="form-control"></div>
+                <div class="form-group"><input formControlName="telefono_celular" type="text" placeholder="numero de telefono o celular" type="text" class="form-control"></div>
+                <div class="form-group"><input [ngClass]="{'ins-invalid':formCliente.get('profesion')?.touched}" formControlName="profesion" type="text" placeholder="profesion" type="text" class="form-control"></div>
+                <div class="form-group"><input formControlName="correo_electronico" type="text" placeholder="correo electronico" type="text" class="form-control"></div>
 
-                    <button [disabled]="formCliente.invalid" class="btn btn-success">guardar cliente</button>
-                </form>
+                <button [disabled]="formCliente.invalid" class="btn btn-success">guardar cliente</button>
+            </form>
 
-            </div>
         </div>
     </div>
+</div>
