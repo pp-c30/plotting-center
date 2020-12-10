@@ -5,6 +5,7 @@ import enrutadorProfesion from "./routes/profesion.routes";
 import enrutadorImpresion from "./routes/impresion.routes";
 import enrutadorCliente from "./routes/cliente.routes";
 import enrutadorRollo from "./routes/rollo.routes";
+import enrutadorAut  from "./routes/autenticacion.routes";
 import morgan from "morgan";
 import cors from "cors";
 
@@ -41,6 +42,7 @@ export class Server {
       this.app.use(enrutadorImpresion);
       this.app.use(enrutadorCliente);
       this.app.use(enrutadorRollo);
+      this.app.use(enrutadorAut);
     }
 
     //configuraciones extras//

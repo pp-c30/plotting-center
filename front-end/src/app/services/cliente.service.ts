@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 //importamos un modulo de angular dentro de la carpeta coomon para utilizar el protocolo http 
 import { HttpClient } from "@angular/common/http";
-
 import { ICliente } from '../models/cliente';
 
 @Injectable({
@@ -24,7 +23,7 @@ export class ClienteService {
   saveCliente(unCliente:ICliente)
   {
     //a traves de una peticon http, especificamente del metodo post nos vamos a comunicar con la API 
-    this.http.post('http://localhost:3000/cliente',unCliente);
+    return this.http.post('http://localhost:3000/cliente',unCliente);
   }
   //recibimos un cliente de tpo ICliente
   updateCliente(unCliente:ICliente)
