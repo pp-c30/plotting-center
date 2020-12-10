@@ -23,7 +23,7 @@ export class GramajeService {
 
    updateGramajes(ungramaje:Igramaje)
    {
-      let id:Number = ungramaje.id_gramaje;
+      let id:number = ungramaje.id_gramaje;
       return  this.http.put('http://localhost:3000/gramaje/'+id,ungramaje);
 
    }
