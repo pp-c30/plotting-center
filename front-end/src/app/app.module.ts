@@ -12,6 +12,8 @@ import {HttpClient, HttpClientModule  } from "@angular/common/http";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { Ng2SearchPipeModule} from "ng2-search-filter";
 import { NgxPaginationModule } from "ngx-pagination";
+import { RegistroComponent } from './components/registro/registro.component';
+import { IngresoComponent } from './component/ingreso/ingreso.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { NgxPaginationModule } from "ngx-pagination";
     ClienteComponent,
     UsuarioComponent,
     ImpresionComponent,
-    RolloComponent],
+    RolloComponent,
+    RegistroComponent,
+    IngresoComponent],
 
   imports: [
     BrowserModule,
