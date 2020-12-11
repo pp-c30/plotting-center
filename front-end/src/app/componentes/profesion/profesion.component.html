@@ -1,32 +1,67 @@
 
 <div class="row">
+
     <div class="col-sm-6">
-     <table class="table table-striped">
-         <thead>
-             <tr>
-                 <th>ID Profesión</th>
-                 <th>Descripción</th>
-             </tr>
-         </thead>
-         <tbody>
-           <tr *ngFor="let profesion of lisProfesion">
-                <td>{{profesion.id_profesion}}</td>
-                <td>{{profesion.descripcion}}</td>
-           </tr>
-         </tbody>
-     </table>
+
+        <div class="row">
+
+            <div class="col-sm-6">
+            <div class="form-group">
+            <input placeholder="Ingrese criterio de búsqueda" [(ngModel)]= "buscarProfesion"  type="text" class="form-control">
+
+                 </div>
+             </div>
+        </div>
+        <table class="table table-striped">
+           <thead>
+                <tr>
+                    <th>ID Profesión</th>
+                    <th>Nombre de la Profesión</th>
+                    <th>Operaciones</th>
+                </tr>
+           </thead>    
+
+                <tbody>
+                     <tr *ngFor="let profesion of lisProfesion | filter:buscarProfesion | paginate:{ itemsPerPage:3, currentPage:p}">
+                        <td>{{profesion.id_profesion}}</td> 
+                        <td>{{profesion.profesion}}</td> 
+                        <td>
+                            <div class="btn-group btn btn-group-sm">
+                                <button (click) = 'eliminarProfesion(profesion.id_profesion)' class="btn btn-danger">Eliminar</button>
+                                <button (click)= "editarProfesion(profesion)" class="btn btn-primary">Editar</button>
+                            </div>
+                        </td>
+                    </tr>  
+                </tbody>
+        </table>
+            <div class="row">
+                    <div class="col-sm-4">
+                        <pagination-controls (pageChange) ="p = $event" ></pagination-controls>
+                    </div>
+
+            </div>
+
     </div>
-    <div class="co-sm-6">
-      <div class="card">
-          <div class="card-header">Agregando Profesion</div>
-          <div class="card-body">
-              <form>
-                  <div class="form-group">
-                     <input placeholder="Ingrese el nombre de la profesion" type="text" class="form-control" >
-                  </div>
-                  <button class="btn btn-success">Guardar profesion</button>
-              </form>
+
+
+    <div class="col-sm-6">
+
+        <div class="card">
+          <div class="card-heard">Profesiones</div>
+          <div class="card-body"> 
+            <form [formGroup]="FormProfesion" (ngSubmit)="guardarProfesion()" novalidate >
+                <div class="form-group">
+                    <input [ngClass]= "{'is- invalid':FormProfesion.get('profesion')?.touched}" formControlName="profesion" placeholder="ingrese la profesion" type="text" class="from-control">
+                </div>
+                <button [disabled]="FormProfesion.invalid" class="btn btn-success"> Guardar Profesion</button>
+            </form>
           </div>
-      </div>
+
+        </div>
+
+
     </div>
+  
+
 </div>
+
