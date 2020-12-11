@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ImpresionService } from "../../services/impresion.service";
 import { GramajeService} from "../../services/gramaje.service";
 import { RolloService } from "../../services/rollo.service";
+import { ClienteService } from "../../services/cliente.service";
 import { FormBuilder,FormGroup,Validators } from "@angular/forms";
 import { IImpresion } from 'src/app/models/impresion';
 @Component({
@@ -19,7 +20,13 @@ export class ImpresionComponent implements OnInit {
 
   formImpresion: FormGroup;
 
-  constructor(private ImpresionServi:ImpresionService, private fb:FormBuilder, private gramajeServ:GramajeService, private rolloServ:RolloService) {
+  displayCorrecion : string = 'display:none';
+
+  listaCliente = [];
+
+
+
+  constructor(private ImpresionServi:ImpresionService, private clienteServ:ClienteService, private fb:FormBuilder, private gramajeServ:GramajeService, private rolloServ:RolloService) {
 
     this.formImpresion = this.fb.group({
       id_impresion:[],
@@ -42,6 +49,7 @@ export class ImpresionComponent implements OnInit {
     this.obtenerImpresiones();
     this.obtenerGramajes();
     this.obtenerRollo();
+    this.obtenerCliente();
   }
 
   obtenerImpresiones()
@@ -117,6 +125,30 @@ obtenerRollo()
     }
   )
 }
+
+
+mostrarOcultarCorrecion(valor:number)
+{
+  if(valor == 1){
+    this.displayCorrecion ="display:block";
+  }
+  else {
+    this.displayCorrecion ="display:none";
+  }
+}
+
+
+
+obtenerCliente()
+{
+  this.clienteServ.getCliente().subscribe(
+    respuesta => {
+      this.listaCliente = respuesta;
+    }
+  )
+}
+
+
 
 
 

@@ -28,15 +28,20 @@
                     </div>
                     <div class="form-group"><input formControlName="cantidad" type="number" placeholder="Cantidad" class="form-control"></div>
                     <div class="form-group">
-                        <select formControlName="correcciones" class="form-control" id="">
+                        <select (change)="mostrarOcultarCorrecion($event.target.value)" formControlName="correcciones" class="form-control" id="">
                             <option disabled selected value="">Seleccione correccion</option>
                             <option value="1">Si</option>
                             <option value="0">No</option>
                         </select>
                     </div>
-                    <div class="form-group"><input formControlName="tiempo_co" type="text" placeholder="Tiempo" class="form-control"></div>
-                    <div class="form-group"><input formControlName="precio_x_hora" type="text" placeholder="Precio por hora" class="form-control"></div>
-                    <div class="form-group"><input [ngClass]="{'ins-invalid':formImpresion.get('cliente')?.touched}" formControlName="cliente" type="text" placeholder="Cliente" class="form-control"></div>
+                    <div class="form-group" [style]="displayCorrecion"><input formControlName="tiempo_co" type="text" placeholder="Tiempo" class="form-control"></div>
+                    <div class="form-group" [style]="displayCorrecion"><input formControlName="precio_x_hora" type="text" placeholder="Precio por hora" class="form-control"></div>
+                    <div class="form-group">
+                        <select class="form-control" formControlName="cliente" id="">
+                            <option disabled selected value="">Seleccione cliente</option>
+                            <option *ngFor="let cliente of listaCliente" [value]="cliente.id_cliente">{{cliente.nombre_razon_social}}</option>
+                        </select>
+                    </div>
                     <div class="form-group"><input formControlName="precio_total" type="text" placeholder="Precio total" class="form-control"></div>
                     <button [disabled]="formImpresion.invalid" class="btn btn-primary">Guardar Impresión</button>
                 </form>
