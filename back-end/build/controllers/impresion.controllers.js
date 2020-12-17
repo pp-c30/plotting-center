@@ -32,6 +32,7 @@ class Impresioncontrollers {
             const db = yield database_1.conexion();
             //Guardamos los datos ingresados en el body en una variable
             let impresion = req.body;
+            req.body.precio_total = (req.body.largo / 1000);
             //Inserta los datos en la base de datos
             yield db.query('insert into impresion set ?', [impresion]);
             //Retorna un mensaje despues de realizarse todo de forma correcta

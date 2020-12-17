@@ -21,7 +21,7 @@ import { iimpresion } from '../models/impresion';
   
           //Retorna una respuesta en formato json de la impresion
           return res.json(impresion);
-  
+        
       }
           //Metodo que guarda datos en la clase
     public async guardarimpresion (req:Request , res:Response){
@@ -31,7 +31,8 @@ import { iimpresion } from '../models/impresion';
 
        //Guardamos los datos ingresados en el body en una variable
        let impresion:iimpresion= req.body;
-
+       req.body.precio_total = (req.body.largo/1000)
+       
 
        //Inserta los datos en la base de datos
        await db.query('insert into impresion set ?',[impresion]);
