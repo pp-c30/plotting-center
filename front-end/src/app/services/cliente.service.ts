@@ -1,12 +1,8 @@
 import { Injectable } from '@angular/core';
 //importamos un modulo de angular dentro de la carpeta coomon para utilizar el protocolo http 
 import { HttpClient } from "@angular/common/http";
-<<<<<<< HEAD
 
 import { ICliente } from "../models/cliente";
-=======
-import { ICliente } from '../models/cliente';
->>>>>>> b08b86578c1a5df0d132d229afe7de2b588886b2
 
 @Injectable({
   providedIn: 'root'
@@ -21,10 +17,6 @@ export class ClienteService {
    {
      //retorna lo quer hay en la ruta
    return this.http.get<ICliente[]>('http://localhost:3000/cliente')
-<<<<<<< HEAD
-   }
-
-=======
   }
 
 
@@ -48,5 +40,4 @@ export class ClienteService {
   {
    return this.http.delete('http://localhost:3000/cliente/'+id);
   }
->>>>>>> b08b86578c1a5df0d132d229afe7de2b588886b2
 }
