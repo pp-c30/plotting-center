@@ -10,6 +10,13 @@ import { ImpresionComponent } from './componentes/impresion/impresion.component'
 import { RolloComponent } from './componentes/rollo/rollo.component';
 import {HttpClient, HttpClientModule  } from "@angular/common/http";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+<<<<<<< HEAD
+=======
+import { Ng2SearchPipeModule} from "ng2-search-filter";
+import { NgxPaginationModule } from "ngx-pagination";
+import { RegistroComponent } from './componentes/registro/registro.component';
+import { IngresoComponent } from './componentes/ingreso/ingreso.component';
+>>>>>>> b08b86578c1a5df0d132d229afe7de2b588886b2
 
 @NgModule({
   declarations: [
@@ -19,7 +26,9 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
     ClienteComponent,
     UsuarioComponent,
     ImpresionComponent,
-    RolloComponent],
+    RolloComponent,
+    RegistroComponent,
+    IngresoComponent],
 
   imports: [
     BrowserModule,

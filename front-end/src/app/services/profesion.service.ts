@@ -17,4 +17,20 @@ export class ProfesionService {
     
   }
 
+  saveProfesion(unaProfesion:IProfesion)
+   {
+     return  this.http.post('http://localhost:3000/profesion',unaProfesion);
+   }
+
+   updateProfesion(unaProfesion:IProfesion)
+   {
+      let id:number = unaProfesion.id_profesion;
+      return  this.http.put('http://localhost:3000/profesion/'+id,unaProfesion);
+   }
+
+   deleteProfesion(id:number)
+   {
+     return  this.http.delete('http://localhost:3000/profesion/'+id);
+   }
+
 }

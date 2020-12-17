@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Usuariocontrollers = void 0;
 //Importamos la funcion "conexion" desde el archivo database
 const database_1 = require("../database");
 //Clase que nos permite alamacenar metodos
